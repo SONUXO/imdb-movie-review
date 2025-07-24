@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "imdb_movie_review"
+version = "0.0.1"
+description = "this is mlops project"
+authors = [
+  { name = "sonu" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["imdb_movie_review"]
+include = ["pyproject.toml", "imdb_movie_review/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["imdb_movie_review"]
+force-sort-within-sections = true
+
