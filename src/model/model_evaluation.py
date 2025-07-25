@@ -17,10 +17,16 @@ load_dotenv()
 # -------------------------------------------------------------------------------------
 # Set up DagsHub credentials for MLflow tracking
 dagshub_token = os.getenv("DAGSHUB_TOKEN")
-if not dagshub_token:
-    raise EnvironmentError("DAGSHUB_TOKEN environment variable is not set")
-# Set up MLflow tracking URI
-mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI"))
+dagshub_user = os.getenv("DAGSHUB_USER_NAME")
+repo_owner = dagshub_user
+repo_name = os.getenv("DAGSHUB_REPO_NAME")
+if not dagshub_token or not dagshub_user or not repo_name:
+    raise EnvironmentError("DAGSHUB_TOKEN, DAGSHUB_USER_NAME, or DAGSHUB_REPO_NAME not set.")
+
+# Authenticated MLflow URI
+mlflow.set_tracking_uri(
+    f"https://{dagshub_user}:{dagshub_token}@dagshub.com/{repo_owner}/{repo_name}.mlflow"
+)
 # -------------------------------------------------------------------------------------
 
 # Below code block is for local use
