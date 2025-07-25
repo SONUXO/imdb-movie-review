@@ -32,9 +32,9 @@ DATA_PATH = os.path.join(BASE_DIR, "..", "data", "raw", "imdb", "data.csv")
 CONFIG = {
     "data_path": DATA_PATH,
     "test_size": 0.2,
-    "mlflow_tracking_uri": os.getenv.MLFLOW_TRACKING_URI,
-    "dagshub_repo_owner": os.getenv.DAGSHUB_USER_NAME,
-    "dagshub_repo_name": os.getenv.DAGSHUB_REPO_NAME,
+    "mlflow_tracking_uri": os.getenv("MLFLOW_TRACKING_URI"),
+    "dagshub_repo_owner": os.getenv("DAGSHUB_USER_NAME"),
+    "dagshub_repo_name": os.getenv("DAGSHUB_REPO_NAME"),
     "experiment_name": "Bow vs TfIdf"
 }
 

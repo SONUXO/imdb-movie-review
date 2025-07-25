@@ -24,8 +24,8 @@ warnings.filterwarnings("ignore")
 load_dotenv()
 
 # Set MLflow Tracking URI & DAGsHub integration
-MLFLOW_TRACKING_URI = os.getenv.MLFLOW_TRACKING_URI
-dagshub.init(repo_owner=os.getenv.DAGSHUB_USER_NAME, repo_name=os.getenv.DAGSHUB_REPO_NAME, mlflow=True)
+MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
+dagshub.init(repo_owner=os.getenv("DAGSHUB_USER_NAME"), repo_name=os.getenv("DAGSHUB_REPO_NAME"), mlflow=True)
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 mlflow.set_experiment("LoR Hyperparameter Tuning")
 

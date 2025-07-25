@@ -189,3 +189,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+#custom
+/local_s3
+/models
+/reports/experiment_info.json
+/reports/metrics.json
+
