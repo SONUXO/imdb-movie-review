@@ -85,10 +85,7 @@ idna==3.10
 imbalanced-learn==0.13.0
 imblearn==0.0
 importlib_metadata==7.2.1
-ipykernel==6.29.5
-ipython==9.4.0
-ipython_pygments_lexers==1.1.1
-iterative-telemetry==0.0.10
+iterative-telemetry==0.0.8
 itsdangerous==2.2.0
 jedi==0.19.2
 Jinja2==3.1.6
