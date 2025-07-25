@@ -29,7 +29,7 @@ jobs:
 
       - name: run pipeline
         env:
-          CAPSTONE_TEST: ${{ secrets.CAPSTONE_TEST }}
+          DAGSHUB_TOKEN: ${{ secrets.CAPSTONE_TEST }}
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
           IAM_USER_ACCESSKEY: ${{ secrets.IAM_USER_ACCESSKEY }}
           IAM_USER_SECRETKEY: ${{ secrets.IAM_USER_SECRETKEY }}
