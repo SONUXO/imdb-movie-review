@@ -9,15 +9,15 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import string
 import re
-import dagshub
-from dotenv import load_dotenv
+import dagshub  
+
 
 import numpy as np
 import warnings
 warnings.simplefilter("ignore", UserWarning)
 warnings.filterwarnings("ignore")
 
-load_dotenv()
+
 
 def lemmatization(text):
     """Lemmatize the text."""

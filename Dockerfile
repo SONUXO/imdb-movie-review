@@ -22,6 +22,7 @@ EXPOSE 5000
 # Command to run the application
 
 CMD ["python", "app.py"]
+# CMD ["sh", "-c", "echo --$DAGSHUB_TOKEN--"]
 
 #Prod Use gunicorn for production, but Flask dev server is fine for this
 # CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "120", "app:app"]

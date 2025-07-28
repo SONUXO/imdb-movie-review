@@ -62,3 +62,28 @@ jobs:
           DAGSHUB_USER_NAME: ${{ secrets.DAGSHUB_USER_NAME }}
           DAGSHUB_REPO_NAME: ${{ secrets.DAGSHUB_REPO_NAME }}
         run: python -m unittest tests/test_flask_app.py
+
+      - name: Login to AWS ECR
+        if: success()
+        run: |
+            aws configure set aws_access_key_id ${{ secrets.IAM_USER_ACCESSKEY }}
+            aws configure set aws_secret_access_key ${{ secrets.IAM_USER_SECRETKEY }}
+            aws configure set region ${{ secrets.AWS_REGION }}
+            aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
+      - name: Build Docker image
+        run: |
+            docker build -t ${{ secrets.AWS_ECR }}:latest .
+
+      - name: Tag Docker image
+        run: |
+            docker tag ${{ secrets.AWS_ECR }}:latest \
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR }}:latest
+
+    
+      - name: Check Docker Authentication
+        run: docker info
+
+      - name: Push Docker image to ECR
+        run: |
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR }}:latest
