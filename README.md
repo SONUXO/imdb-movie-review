@@ -46,25 +46,3 @@ Each stage is modular and reproducible:
 ---
 ## Snapshots of Grafana monitoring
 ![grafana monitoring](/images/metrics.png)
-
-
-## 🔧 How to Run
-> Ensure you have Python ≥3.8, DVC, and Docker installed.
-
-```bash
-# Clone the repository
-git clone https://github.com/SONUXO/imdb-movie-review.git
-cd imdb-movie-review.
-
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run DVC pipeline
-dvc repro
-
-# Run the Flask App locally
-python app.py
