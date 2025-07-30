@@ -40,12 +40,12 @@ Each stage is modular and reproducible:
 ---
 
 ## Snapshots of Web app
-<!-- ![flask app 1](/images/flaskApp1.png)
-![flash app 2](/images/flaskApp2.png) -->
+![flask app 1](/images/flaskApp1.png)
+![flash app 2](/images/flaskApp2.png)
 
 ---
 ## Snapshots of Grafana monitoring
-<!-- ![grafana monitoring](/images/metrics.png) -->
+![grafana monitoring](/images/metrics.png)
 
 
 ## 🔧 How to Run
