@@ -7,7 +7,20 @@ This project demonstrates an end-to-end MLOps pipeline for performing sentiment 
 ---
 
 ## 🚀 Architecture Overview
+![architecture](/images/architecture.png)
+---
 
+
+## 📦 Pipeline Stages (from `dvc.yaml`)
+
+Each stage is modular and reproducible:
+
+1. **Data Ingestion** – Load and split raw data.
+2. **Data Preprocessing** – Clean and tokenize data.
+3. **Feature Engineering** – Convert text to vectorized format using `TfidfVectorizer`.
+4. **Model Building** – Train a classification model.
+5. **Model Evaluation** – Evaluate metrics (accuracy, precision, recall) and log with MLflow.
+6. **Model Registration** – Register the best model version with MLflow.
 
 ---
 
@@ -26,27 +39,22 @@ This project demonstrates an end-to-end MLOps pipeline for performing sentiment 
 
 ---
 
-## 📦 Pipeline Stages (from `dvc.yaml`)
-
-Each stage is modular and reproducible:
-
-1. **Data Ingestion** – Load and split raw data.
-2. **Data Preprocessing** – Clean and tokenize data.
-3. **Feature Engineering** – Convert text to vectorized format using `TfidfVectorizer`.
-4. **Model Building** – Train a classification model.
-5. **Model Evaluation** – Evaluate metrics (accuracy, precision, recall) and log with MLflow.
-6. **Model Registration** – Register the best model version with MLflow.
+## Snapshots of Web app
+![flask app 1](/images/flaskApp1.png)
+![flash app 2](/images/flaskApp2.png)
 
 ---
+## Snapshots of Grafana monitoring
+![grafana monitoring](/images/metrics.png)
+
 
 ## 🔧 How to Run
-
 > Ensure you have Python ≥3.8, DVC, and Docker installed.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/imdb-mlops.git
-cd imdb-mlops
+git clone https://github.com/SONUXO/imdb-movie-review.git
+cd imdb-movie-review.
 
 # Create a virtual environment
 python -m venv venv
